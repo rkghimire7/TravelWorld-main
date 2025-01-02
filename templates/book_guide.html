@@ -1,0 +1,21 @@
+<!-- book_guide.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Guide</title>
+</head>
+<body>
+    <h1>Book Guide - {{ availability.guide.first_name }} for {{ availability.date }}</h1>
+    <p>Available time slots: {{ availability.time_slots }}</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Book Now</button>
+    </form>
+
+    <a href="{% url 'guide_availability' %}">Back to Availability</a>
+</body>
+</html>
